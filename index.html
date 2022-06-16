@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <header>
+<!--link to view HS on left, time remaining on right-->
+        <div class="high-score-link">
+            <a href="#">View high scores</a>
+        </div>
+        <div class="timer">Time: </div>
+    </header>
+    <main>
+        <!-- h1/page title is replaced with question text-->
+        <div>
+            <h1 class="title" id="question">Coding Quiz Challenge</h1>
+        </div>
+        <!-- p tag that gets cleared when quiz starts-->
+        <div id="choices">
+            <p class="content">
+                Try to answer the following code-related questions wihtin the time limit.
+                Keep in mind that incorrect answers will Penalize your score/time by 10 seconds!
+            </p>
+            <!-- <ul id="test"> 
+                <li> crazy idea</li> it is
+                <li> but if it works</li> it did
+                <li> This is great</li> debatable
+            </ul> -->
+        </div>
+        <div class="btn-container">
+            <button class="btn" id="start-quiz" type="button">Start Quiz!</button>
+        </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
