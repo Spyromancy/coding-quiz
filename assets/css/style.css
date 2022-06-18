@@ -85,6 +85,6 @@ main ul {
 
 }
 
-main ul li button{
-    padding: 30px 15px 10px;
+main ul li button.btn{
+    margin:10px 0;
 }
