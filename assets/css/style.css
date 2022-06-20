@@ -51,6 +51,14 @@ main div {
     display: flex;
     justify-content: center;
 }
+main div p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+form.input-hs {
+    display:none;
+}
 
 .btn {
     outline: none;

@@ -13,7 +13,7 @@
         <div class="high-score-link">
             <a href="#">View high scores</a>
         </div>
-        <div class="timer">Time: </div>
+        <div class="timer">Time: <span class="time-left">0</span></div>
     </header>
     <main>
         <!-- h1/page title is replaced with question text-->
@@ -27,7 +27,14 @@
                 Keep in mind that incorrect answers will Penalize your score/time by 10 seconds!
             </p>
         </div>
-        <div class="give-result"></div>
+        <form class="input-hs">
+            <div>
+                <p>Your final score is: <span class="score"></span></p>
+            </div>
+            <div class="initials">Enter initials: 
+                <input type="text" name="initials" class="text-input" placeholder="AAA" />
+            </div> 
+        </form>
         <div class="btn-container">
             <button class="btn" id="start-quiz" type="button">Start Quiz!</button>
         </div>
