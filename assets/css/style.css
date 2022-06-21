@@ -1,0 +1,120 @@
+*{
+
+}
+
+:root {
+    --primary: #a0f;
+    --secondary: #7700aa;
+    --tertiary: #000099;
+    --grey: #333;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif
+}
+
+header {
+    padding: 20px 35px 0px 35px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+header a{
+    text-decoration: none;
+    color:var(--primary);
+}
+
+header div.timer {
+    font-weight: bold;
+}
+
+
+main h1 {
+    text-align: center;
+    font-size: 40px;
+    width:60%;
+}
+main p.content {
+    width:60%;
+    margin:auto;
+    font-size: 20px;
+    padding:0 35px;
+}
+main div, main div p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} */
+div.input-hs {
+    display:none;
+    width:60%;
+    margin:auto;
+    flex-direction: column;
+}
+div.input-hs div{
+    width:100%;
+}
+div.input-hs div p{
+    padding: 0;
+    display:block;
+    font-size:22px;
+}
+form, form input {
+    font-size:22px;
+}
+
+
+
+
+.btn {
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: var(--secondary);
+    color:white;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px var(--grey);
+}
+.btn#submit {
+    padding:2px 15px;
+}
+
+.btn:hover {
+    box-shadow: 0 2px var(--grey);
+    top: -2px;
+}
+
+.btn:active {
+    box-shadow: 0 0px var(--grey);
+    top: 0;
+    background: var(--primary);
+}
+
+main ul {
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+
+main ul li button.btn{
+    margin:10px 0;
+}
+
+/*MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
+@media screen and (max-width: 575px) {
+    main h1, .button-holder, main ul, main p.content {
+        width:80%;
+    }
+}
