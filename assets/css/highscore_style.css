@@ -1,0 +1,95 @@
+*{
+
+}
+
+:root {
+    --primary: #a0f;
+    --secondary: #7700aa;
+    --tertiary: #9a66b154;
+    --grey: #333;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif
+}
+
+main {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+main h1 {
+    margin-top: 150px;
+
+    font-size: 40px;
+    width:60%;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.highscores{
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    width: 60%;
+    margin:auto;
+    background-color: var(--tertiary);
+    list-style: none;
+    padding:0;
+}
+ul li {
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.button-holder {
+    display:flex;
+    width:60%;
+    margin:auto;
+    font-size: 20px;
+    justify-content: space-between; /* I don't care what the mock up says, putting the 'delete' button next to the 'go back' button is bad design. */
+}
+.btn {
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    padding: 5px 10px;
+    background: var(--secondary);
+    color:white;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px var(--grey);
+}
+
+
+.btn:hover {
+    box-shadow: 0 2px var(--grey);
+    top: -2px;
+}
+
+.btn:active {
+    box-shadow: 0 0px var(--grey);
+    top: 0;
+    background: var(--primary);
+}
+
+
+
+main ul li button.btn{
+    margin:10px 0;
+}
+
+
+@media screen and (max-width: 575px) {
+    main h1, .button-holder, ul {
+        width:80%;
+    }
+}

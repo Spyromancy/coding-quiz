@@ -5,6 +5,8 @@ var timerEl = document.querySelector(".time-left");
 var currentProblem;
 var timer = 0;
 var myInterval;
+var highScoreArr = [];
+var highScore;
 
 function startQuiz() {
     document.querySelector(".content").style.display = "none";
@@ -15,22 +17,6 @@ function startQuiz() {
     timerEl.textContent= timer;
     myInterval= setInterval(quizTimer,1000);
     generateQuestion()
-};
-
-function endQuiz() {
-    alert("That's it. it's over. go home you did it! you're score? iunno 100% good job. go away.");
-    clearInterval(myInterval);
-    questionEl.textContent= "Quiz Over!";
-    points = Math.floor(points*(100/quizLen));
-    if(timer>0){
-        document.querySelector(".score").textContent= timer;
-    }
-    else{
-        document.querySelector(".score").textContent= "⭐ You Tried.";
-    }
-    
-    document.querySelector(".input-hs").style.display = "block";
-    document.querySelector("ul").remove();
 };
 
 function quizTimer() {
@@ -63,7 +49,6 @@ function generateQuestion() {
     answersEl.appendChild(choiceListEl);
 };
 
-
 function checkAnswerHandler(event) {
     // needs to call to end quiz if questionArr is empty
     var targetEl = event.target;
@@ -94,15 +79,52 @@ function checkAnswerHandler(event) {
     else {
         setTimeout(function () {
             background.style.background = "#fff";
-            document.querySelector("ul").remove();
             endQuiz();
         }, 100)
     }
 
 };
 
+function endQuiz() {
+
+    clearInterval(myInterval);
+    questionEl.textContent= "Quiz Over!";
+    if(timer>0){
+        document.querySelector(".score").textContent= timer;
+    }
+    else{
+        document.querySelector(".score").textContent= "⭐ You Tried."; // DNF's earn you no points. Try harder.
+    }
+
+    document.querySelector(".input-hs").style.display = "flex";
+    document.querySelector("ul").remove();
+};
+
+function saveHighScore(event){
+    event.preventDefault();
+    highScore = {
+        name: document.querySelector("input[name='initials']").value,
+        score: timer
+    };
+    if(!highScore.name){
+        alert("Please input your initials") // or anything really the code doesn't care too much, but we're not about to let the user know that.
+        return false;
+    }
+    highScoreArr.push(highScore);
+    localStorage.setItem("highscores",JSON.stringify(highScoreArr));
+    window.open("./highscores.html","_self");
+};
+
+function loadHighScores(){
+    if(localStorage.getItem("highscores")){
+        highScoreArr= JSON.parse(localStorage.getItem("highscores"));
+    }
+}
+
+loadHighScores();
 startQuizEl.addEventListener("click", startQuiz);
 answersEl.addEventListener("click", checkAnswerHandler);
+document.querySelector(".input-hs").addEventListener("submit", saveHighScore);
 
 var questionArr = [
     {
