@@ -129,7 +129,7 @@ document.querySelector(".input-hs").addEventListener("submit", saveHighScore);
 var questionArr = [
     {
         question: "How do you call a function when a certain element is clicked?",
-        choices: ["element.onClick(func)",
+        choices: ["element.ifClick(func)", // THERE'S AN ONCLICK METHOD ARE YOU KIDDING ME???
             "if(element.clicked) { func(); }",
             "element.addEventListender('click', func)",
             "You can't."],
